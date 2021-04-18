@@ -3,7 +3,6 @@ package meudominio.com.desafio.UI.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import meudominio.com.desafio.common.viewmodel.Response
-import java.util.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,10 +12,9 @@ class CadastrarOrdemServicoViewModell(val repository : CepRepository) : ViewMode
 
     private val response = MutableLiveData<Response>()
 
-
-
     fun getEndereco(cep : String) {
         CoroutineScope(Dispatchers.IO).launch {
+
             try {
                 val responseApi =  repository.getEndereco(cep)
                 response.postValue(Response.success(responseApi))

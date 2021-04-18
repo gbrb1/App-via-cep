@@ -6,11 +6,11 @@ import retrofit2.http.*
 interface ApiService {
 
 
-    @GET("{cep}/json")
+    @GET("26525045/json")
 
     suspend fun getEndereco(
         @Query("cep") cep : String,
-    ): Response<List<ApiDataResponse>>
+    ): Response<ApiDataResponse>
 
 
 }
