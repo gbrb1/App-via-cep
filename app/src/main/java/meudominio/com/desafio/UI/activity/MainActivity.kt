@@ -1,7 +1,8 @@
-package meudominio.com.desafio
+package meudominio.com.desafio.UI.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import meudominio.com.desafio.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
