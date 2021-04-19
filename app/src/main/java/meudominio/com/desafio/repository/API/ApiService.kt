@@ -9,7 +9,7 @@ interface ApiService {
     @GET("{cep}/json")
 
     suspend fun getEndereco(
-        @Query("cep") cep : String,
+            @Path("cep") cep : String,
     ): Response<ApiDataResponse>
 
 

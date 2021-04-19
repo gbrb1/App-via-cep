@@ -59,8 +59,20 @@ class CadastrarOrdemServicoActivity : AppCompatActivity() {
        address as ApiDataResponse
 
         edit_text_endereco.setText(address.logradouro.toString())
+
+        edit_text_endereco.isCursorVisible = false
+        edit_text_endereco.isFocusable = false
+
         edit_text_bairro.setText(address.bairro.toString())
+
+        edit_text_bairro.isCursorVisible = false
+        edit_text_bairro.isFocusable = false
+
         edit_text_cidade.setText(address.localidade.toString())
+
+        edit_text_cidade.isCursorVisible = false
+        edit_text_cidade.isFocusable = false
+
     }
 
 

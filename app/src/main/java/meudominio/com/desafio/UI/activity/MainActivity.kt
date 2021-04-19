@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sem_ordem.visibility = View.GONE
+
 
         adicionar_ordem_servico.setOnClickListener{
             intent = Intent(applicationContext, CadastrarOrdemServicoActivity::class.java)
