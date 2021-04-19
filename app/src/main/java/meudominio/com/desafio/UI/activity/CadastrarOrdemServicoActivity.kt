@@ -9,6 +9,7 @@ import meudominio.com.desafio.R
 import meudominio.com.desafio.UI.viewmodel.CadastrarOrdemServicoViewModell
 import meudominio.com.desafio.common.viewmodel.Response
 import meudominio.com.desafio.common.viewmodel.Status
+import meudominio.com.desafio.repository.API.ApiDataResponse
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CadastrarOrdemServicoActivity : AppCompatActivity() {
@@ -55,11 +56,11 @@ class CadastrarOrdemServicoActivity : AppCompatActivity() {
 
     private fun responseSuccess(address: Any?) {
 
-       // address as ApiDataResponse
+       address as ApiDataResponse
 
-        edit_text_endereco.setText(address.toString())
-       // edit_text_bairro.setText(address.bairro)
-        //edit_text_cidade.setText(address.localidade)
+        edit_text_endereco.setText(address.logradouro.toString())
+        edit_text_bairro.setText(address.bairro.toString())
+        edit_text_cidade.setText(address.localidade.toString())
     }
 
 

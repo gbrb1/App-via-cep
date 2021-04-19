@@ -1,21 +1,22 @@
 package meudominio.com.desafio.repository
 
-//import meudominio.com.desafio.repository.API.ApiDataResponse
+import meudominio.com.desafio.repository.API.ApiDataResponse
+
 import meudominio.com.desafio.repository.API.RestApi
 
 class CepRepository(private val restApi : RestApi) {
 
 
 
-    suspend fun getEndereco(cep : String): String? {
+    suspend fun getEndereco(cep : String): ApiDataResponse {
         val res = restApi.getApiService().getEndereco(cep)
 
         when(res.code()) {
             200, 204 -> {
 
-                //val response = ApiDataResponse(res.body()?.logradouro, res.body()?.bairro, res.body()?.localidade)
+             return ApiDataResponse(res.body()?.logradouro, res.body()?.bairro, res.body()?.localidade)
 
-                return res.body()?.localidade
+                //return res.body()?.localidade
             }
             400 -> throw Exception("Erro ao fazer requisição.")
             401 -> throw Exception("Usuário não autenticado.")
